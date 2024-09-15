@@ -1,5 +1,5 @@
 import {memo,FC} from "react";
-import { Route,Routes } from "react-router-dom";
+import { Route,Routes} from "react-router-dom";
 import { Login } from "../components/pages/Login"; 
 import { Home } from "../components/pages/Home";
 import { Page404 } from "../components/pages/Page404";
@@ -14,12 +14,12 @@ export const Router:FC=memo(()=>{
                     <Route 
                     key={route.path} 
                     path={route.path}
-                    element={route.Children}
+                    element={route.element}
                     />
             ))}
             
-                    
-                    <Route path="*" element={<Page404 />} /> {/* 404 Not Found */}
+                    {/* 404 Not Found */}
+                    <Route path="*" element={<Page404 />} /> 
                     </Routes>
     );
 });
